@@ -1,4 +1,5 @@
 library(readxl)
+library(openxlsx)
 
 
 Encuesta <- read_excel("encuesta.xlsx")
@@ -24,3 +25,5 @@ EncuestaNoSeMatriculo <- Encuesta[Encuesta[33] == "Si sigo estudiando, solo que 
 EncuestaAbandonoSigueOtraCarrera <- Encuesta[Encuesta[33] == "Abandone otras carreras pero continúo estudiando otra", ]
 
 #Creacion del excel
+write.xlsx(EncuestaYaNoEstudian, "EncuestaYaNoEstudian.xlsx")
+
